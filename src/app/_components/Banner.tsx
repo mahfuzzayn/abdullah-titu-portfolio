@@ -1,0 +1,118 @@
+"use client";
+import ArrowAnimation from "@/components/ArrowAnimation";
+import Button from "@/components/Button";
+import { generalInfoData } from "@/lib/data";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import Image from "next/image";
+import React from "react";
+
+// Images
+import bannerImage from "@/assets/images/banner-image-4.jpg";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+const Banner = () => {
+    const containerRef = React.useRef<HTMLDivElement>(null);
+
+    // move the content a little up on scroll
+    useGSAP(
+        () => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "bottom 70%",
+                    end: "bottom 10%",
+                    scrub: 1,
+                },
+            });
+
+            tl.fromTo(
+                ".slide-up-and-fade",
+                { y: 0 },
+                { y: -150, opacity: 0, stagger: 0.02 }
+            );
+        },
+        { scope: containerRef }
+    );
+
+    return (
+        <section className="relative overflow-hidden" id="banner">
+            <ArrowAnimation />
+            <div
+                className="container h-svh max-lg:min-h-[1230px] max-md:pb-10 flex justify-center lg:justify-between lg:items-center max-lg:flex-col max-md:gap-20 max-lg:gap-10"
+                ref={containerRef}
+            >
+                <div className="max-md:flex flex-col justify-center items-start max-w-[544px]">
+                    <h1 className="banner-title slide-up-and-fade leading-[.95] text-6xl sm:text-[80px] font-anton">
+                        <span className="text-primary">ROBOTICS</span>
+                        <br /> <span className="ml-4">ENGINEER</span>
+                    </h1>
+                    <p className="banner-description slide-up-and-fade mt-6 text-lg text-muted-foreground">
+                        Hi! I&apos;m{" "}
+                        <span className="font-medium text-foreground">
+                            Titu
+                        </span>
+                        , a Robotics Engineer specializing in embedded systems,
+                        automation, and 3D-printed prototypes. I build
+                        intelligent hardware–software solutions that are
+                        innovative, reliable, and fast.
+                    </p>
+                    <div className="flex gap-x-4 slide-up-and-fade">
+                        <Button
+                            as="link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={generalInfoData.calendlyLink}
+                            variant="primary"
+                            className="mt-9 banner-button"
+                        >
+                            Book a Call
+                        </Button>
+                        <Button
+                            as="link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={generalInfoData.resumeLink}
+                            variant="dark"
+                            defaultBg="bg-primary"
+                            className="mt-9 banner-button"
+                        >
+                            Resume
+                        </Button>
+                    </div>
+                </div>
+                <div className="slide-up-and-fade">
+                    <Image
+                        src={bannerImage}
+                        alt="Banner Image"
+                        className="w-full max-w-lg"
+                    />
+                </div>
+                <div className="md:absolute bottom-[10%] right-[4%] flex md:flex-col gap-4 md:gap-8 text-center md:text-right">
+                    <div className="slide-up-and-fade">
+                        <h5 className="text-3xl sm:text-4xl font-anton text-primary mb-1.5">
+                            4+
+                        </h5>
+                        <p className="text-white">Years of Experience</p>
+                    </div>
+                    <div className="slide-up-and-fade">
+                        <h5 className="text-3xl sm:text-4xl font-anton text-primary mb-1.5">
+                            10+
+                        </h5>
+                        <p className="text-white">Completed Projects</p>
+                    </div>
+                    <div className="slide-up-and-fade">
+                        <h5 className="text-3xl sm:text-4xl font-anton text-primary mb-1.5">
+                            8K+
+                        </h5>
+                        <p className="text-white">Hours Worked</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Banner;
