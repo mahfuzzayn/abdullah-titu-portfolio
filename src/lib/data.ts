@@ -1,4 +1,9 @@
 import { IAchievement, IExperience, IProject } from "@/types";
+import FacebookIcon from "@/components/icons/FacebookIcon";
+import InstagramIcon from "@/components/icons/InstagranIcon";
+import LinkedInIcon from "@/components/icons/LinkedInIcon";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import XIcon from "@/components/icons/XIcon";
 
 export const generalInfoData = {
   email: "contact@abdullahtitu.com",
@@ -13,11 +18,31 @@ export const generalInfoData = {
 };
 
 export const socialLinksData = [
-  { name: "facebook", url: "https://www.facebook.com/Abdullah.Al.T2" },
-  { name: "linkedin", url: "https://www.linkedin.com/in/abdullahtitu" },
-  { name: "whatsapp", url: "https://wa.me/8801622766644" },
-  { name: "instagram", url: "https://instagram.com/t2_ins" },
-  { name: "x", url: "https://x.com/T2_X21" },
+  {
+    name: "facebook",
+    url: "https://www.facebook.com/Abdullah.Al.T2",
+    icon: FacebookIcon,
+  },
+  {
+    name: "linkedin",
+    url: "https://www.linkedin.com/in/abdullahtitu",
+    icon: LinkedInIcon,
+  },
+  {
+    name: "whatsapp",
+    url: "https://wa.me/8801622766644",
+    icon: WhatsAppIcon,
+  },
+  {
+    name: "instagram",
+    url: "https://instagram.com/t2_ins",
+    icon: InstagramIcon,
+  },
+  {
+    name: "x",
+    url: "https://x.com/T2_X21",
+    icon: XIcon,
+  },
 ];
 
 export const stackData = {
