@@ -110,7 +110,7 @@ const Projects = () => {
                             ref={imageContainer}
                         >
                             {projectsData.map((project) => (
-                                <Image
+                                project.thumbnail && <Image
                                     src={project.thumbnail}
                                     alt="Project"
                                     width="400"

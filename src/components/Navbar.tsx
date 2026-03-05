@@ -11,6 +11,8 @@ const colors = [
     'bg-blue-500 text-white',
     'bg-teal-500 text-black',
     'bg-indigo-500 text-white',
+    'bg-violet-500 text-white',
+    'bg-cyan-500 text-white',
 ];
 
 const menuLinks = [
@@ -23,16 +25,20 @@ const menuLinks = [
         url: '/#about-me',
     },
     {
+        name: 'Skills',
+        url: '/#my-stack',
+    },
+    {
+        name: 'Achievements',
+        url: '/#achievements',
+    },
+    {
         name: 'Projects',
         url: '/#projects',
     },
     {
-        name: 'Education',
-        url: '/#education',
-    },
-    {
-        name: 'Experience',
-        url: '/#experience',
+        name: 'Mission & Vision',
+        url: '/#mission-and-vision',
     },
 ];
 

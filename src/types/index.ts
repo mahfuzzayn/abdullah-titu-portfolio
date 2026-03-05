@@ -22,19 +22,23 @@ export interface IExperience {
     description: string;
 }
 
+export interface IAchievement {
+    title: string;
+}
+
 export interface IProject {
     title: string;
     year: number;
     description: string;
     role: string;
     techStack: string[];
-    thumbnail: string;
+    thumbnail?: string;
     github?: {
         client?: string;
         server?: string;
     };
-    longThumbnail: string;
-    images: string[];
+    longThumbnail?: string;
+    images?: string[];
     slug: string;
     liveUrl?: string;
     sourceCode?: string;

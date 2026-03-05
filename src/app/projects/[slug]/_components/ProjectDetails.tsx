@@ -138,7 +138,7 @@ const ProjectDetails = ({ project }: Props) => {
                                 </p>
                                 <div className="text-lg">{project.year}</div>
                             </div>
-                            <div className="fade-in-later">
+                            {project.github && <div className="fade-in-later">
                                 <p className="text-muted-foreground font-anton mb-3">
                                     Github
                                 </p>
@@ -168,7 +168,7 @@ const ProjectDetails = ({ project }: Props) => {
                                         </Button>
                                     )}
                                 </div>
-                            </div>
+                            </div>}
                             <div className="fade-in-later">
                                 <p className="text-muted-foreground font-anton mb-3">
                                     Tech & Technique
@@ -204,7 +204,7 @@ const ProjectDetails = ({ project }: Props) => {
                     className="fade-in-later relative flex flex-col gap-2 max-w-[800px] mx-auto"
                     id="images"
                 >
-                    {project.images.map((image) => (
+                    {project.images && project.images.map((image) => (
                         <div
                             key={image}
                             className="group relative w-full aspect-750/400 bg-white/10"

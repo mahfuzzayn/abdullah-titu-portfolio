@@ -9,7 +9,7 @@ import Image from "next/image";
 import React from "react";
 
 // Images
-import bannerImage from "@/assets/images/banner-image-4.jpg";
+import bannerImage from "@/assets/images/banner-image-1.png";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -54,10 +54,8 @@ const Banner = () => {
                         <span className="font-medium text-foreground">
                             Titu
                         </span>
-                        , a Robotics Engineer specializing in embedded systems,
-                        automation, and 3D-printed prototypes. I build
-                        intelligent hardware–software solutions that are
-                        innovative, reliable, and fast.
+                        , a Bangladeshi innovator working in CubeSat technology, robotics, and embedded systems engineering.
+                        I am currently developing FavSat , a next-generation DIY CubeSat platform designed for education, research, and real-time telemetry applications.
                     </p>
                     <div className="flex gap-x-4 slide-up-and-fade">
                         <Button
@@ -87,7 +85,7 @@ const Banner = () => {
                     <Image
                         src={bannerImage}
                         alt="Banner Image"
-                        className="w-full max-w-lg"
+                        className="w-full max-w-md"
                     />
                 </div>
                 <div className="md:absolute bottom-[10%] right-[4%] flex md:flex-col gap-4 md:gap-8 text-center md:text-right">
